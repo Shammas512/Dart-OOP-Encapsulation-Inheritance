@@ -1,5 +1,7 @@
+import 'package:code_x/practise/abstraction.dart';
 import 'package:code_x/practise/encapsulation.dart';
 import 'package:code_x/practise/inheritence.dart';
+import 'package:code_x/practise/polymorphism.dart';
 
 int main() {
   CartItem product1 = CartItem("Dairy Milk", 300);
@@ -19,5 +21,17 @@ int main() {
   );
   book1.displayDetails();
 
+  PaymentMehod payment1 = Jazzcash();
+  PaymentMehod payment2 = CreditCard();
+
+  payment1.pay(505.5);
+  payment2.pay(707.2);
+
+  PercentageDiscount d1 = PercentageDiscount();
+  d1.discount = 0.70;
+  var a = d1.calculateDiscount(1000);
+  Flatprice d2 = Flatprice();
+  var b = d2.calculateDiscount(1000);
+  print("$a\n $b");
   return 0;
 }
